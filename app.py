@@ -20,10 +20,7 @@ def get_gemini_response(input,pdf_content,prompt):
 def input_pdf_setup(upload_file):
     if upload_file is not None:
         # converting pdf tp image
-        if os.getenv("HOME") == "/app":  # Streamlit Cloud environment
-            images = convert_from_bytes(upload_file.read())
-        else:  # Local environment
-            images = convert_from_bytes(upload_file.read(), poppler_path=r'poppler-24.08.0/Library/bin')
+        images = convert_from_bytes(upload_file.read())
 
         first_page=images[0]
 
