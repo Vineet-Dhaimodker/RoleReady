@@ -5,7 +5,7 @@ load_dotenv()
 import streamlit as st
 import os
 from PIL import Image
-import pdf2image
+from pdf2image import convert_from_bytes
 import google.generativeai as genai
 import base64
 import io
